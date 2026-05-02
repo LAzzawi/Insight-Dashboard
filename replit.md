@@ -2,7 +2,7 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+pnpm workspace monorepo using TypeScript, plus a Streamlit sales dashboard (Python).
 
 ## Stack
 
@@ -15,6 +15,23 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
+
+## Streamlit Dashboard
+
+- **Entry point**: `app.py` (project root)
+- **Runtime**: Python 3.11
+- **Dependencies**: streamlit, pandas, plotly, numpy
+- **Config**: `.streamlit/config.toml` (port 5000)
+- **Workflow**: `Start application` → `streamlit run app.py --server.port 5000`
+
+### Features
+- Synthetic sales dataset (1,000 transactions, 2023–2024)
+- Sidebar filters: date range, category, region
+- KPIs: total revenue, units sold, avg order value, growth rate
+- Line chart: monthly revenue trend by category
+- Pie chart: revenue distribution by category
+- Bar chart: category × region grouped comparison
+- Monthly summary table
 
 ## Key Commands
 
