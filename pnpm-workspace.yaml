@@ -28,10 +28,9 @@
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-  # Exclude @replit scoped packages from the minimum release age check.
-  # These are first-party build-tool plugins with a trusted release pipeline.
+  # Exclude these build-tool plugins from the minimum release age check.
+  # They follow a controlled release process where the delay provides no benefit.
   - '@replit/*'
-  - stripe-replit-sync
 
 packages:
   - artifacts/*
